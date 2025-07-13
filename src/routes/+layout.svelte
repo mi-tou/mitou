@@ -1,7 +1,17 @@
 <script lang="ts">
-	import '../app.css';
+    import { Footer, Header, Main } from "$lib/components/layout";
+    import "../app.css";
 
-	let { children } = $props();
+    let { children } = $props();
+
+    const brand = {
+        title: "MiTou",
+        year: "2025"
+    };
 </script>
 
-{@render children()}
+<Header title={brand.title} links={[]} />
+<Main>
+    {@render children()}
+</Main>
+<Footer title={brand.title} year={brand.year} />
