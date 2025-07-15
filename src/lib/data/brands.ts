@@ -4,7 +4,7 @@ export type Brand = {
     href: string;
     owner: string;
     country: string;
-    types: string[];
+    image: string;
 };
 
 export const brands: Brand[] = [
@@ -14,7 +14,7 @@ export const brands: Brand[] = [
         href: "https://pampers.com.tw/",
         owner: "Procter & Gamble",
         country: "美國",
-        types: ["diaper"]
+        image: "/image/brand/pampers.png"
     },
     {
         id: "mamypoko",
@@ -22,7 +22,7 @@ export const brands: Brand[] = [
         href: "https://www.mamypoko.com.tw/",
         owner: "Unicharm",
         country: "日本",
-        types: ["diaper"]
+        image: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
     },
     {
         id: "huggies",
@@ -30,7 +30,7 @@ export const brands: Brand[] = [
         href: "https://www.huggies.com.tw/",
         owner: "Kimberly Clark",
         country: "日本",
-        types: ["diaper"]
+        image: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
     },
     {
         id: "libero",
@@ -38,7 +38,7 @@ export const brands: Brand[] = [
         href: "https://www.libero.com/",
         owner: "Vinda",
         country: "中國",
-        types: ["diaper"]
+        image: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
     },
     {
         id: "merries",
@@ -46,7 +46,7 @@ export const brands: Brand[] = [
         href: "https://www.kao.com/tw/products/merries/",
         owner: "Kao",
         country: "日本",
-        types: ["diaper"]
+        image: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
     },
     {
         id: "carnation",
@@ -54,6 +54,6 @@ export const brands: Brand[] = [
         href: "https://www.knh.com.tw/product-detail-2153046.html",
         owner: "KNH",
         country: "台灣",
-        types: ["diaper"]
+        image: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
     }
 ];
