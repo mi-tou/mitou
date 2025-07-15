@@ -27,9 +27,9 @@
 <svelte:window bind:scrollY={y} bind:innerWidth={w} />
 
 <header
-    class={cn("shadow-neutral-content bg-neutral text-neutral-content shadow-xs", {
-        "fixed inset-x-0 top-0 z-50 transition-all": true,
-        "inset-x-8 top-8 mx-16 rounded-full px-8": isFloating
+    class={cn("fixed inset-x-0 top-0 z-50 px-8", {
+        "text-content bg-transparent transition-all": true,
+        "text-neutral-content bg-neutral": isFloating
     })}
 >
     <div class="container mx-auto h-16 overflow-hidden">
@@ -67,5 +67,3 @@
         </div>
     </div>
 </header>
-
-<div class="h-16"></div>
