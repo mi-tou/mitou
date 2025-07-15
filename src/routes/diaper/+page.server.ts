@@ -1,10 +1,10 @@
 import type { PageServerLoad } from "./$types";
-import * as data from "./data-dispers";
+import * as data from "./data-diapers";
 
 export const load: PageServerLoad = async () => {
-    const { dispers } = data;
+    const { diapers } = data;
 
     return {
-        dispers
+        diapers
     };
 };
