@@ -28,8 +28,8 @@
 
 <header
     class={cn("fixed inset-x-0 top-0 z-50 px-8", {
-        "text-neutral-content bg-transparent transition-all": true,
-        "bg-neutral": isFloating
+        "text-content bg-transparent transition-all": true,
+        "text-neutral-content bg-neutral": isFloating
     })}
 >
     <div class="container mx-auto h-16 overflow-hidden">
