@@ -22,7 +22,7 @@ export const brands: Brand[] = [
         href: "https://www.mamypoko.com.tw/",
         owner: "Unicharm",
         country: "日本",
-        image: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+        image: "/image/brand/mamypoko.png"
     },
     {
         id: "huggies",
@@ -30,30 +30,62 @@ export const brands: Brand[] = [
         href: "https://www.huggies.com.tw/",
         owner: "Kimberly Clark",
         country: "日本",
-        image: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+        image: "/image/brand/huggies.png"
     },
     {
         id: "libero",
         name: "麗貝樂",
         href: "https://www.libero.com/",
-        owner: "Vinda",
+        owner: "維達",
         country: "中國",
-        image: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+        image: "/image/brand/libero.png"
     },
     {
         id: "merries",
         name: "妙而舒",
         href: "https://www.kao.com/tw/products/merries/",
-        owner: "Kao",
+        owner: "花王株式会社",
         country: "日本",
-        image: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+        image: "/image/brand/merries.png"
     },
     {
         id: "carnation",
         name: "寶貝天使",
         href: "https://www.knh.com.tw/product-detail-2153046.html",
-        owner: "KNH",
+        owner: "康那香企業股份有限公司",
         country: "台灣",
-        image: "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+        image: "/image/brand/carnation.png"
+    },
+    {
+        id: "purebaby",
+        name: "波比",
+        href: "https://www.yome.in/",
+        owner: "釉暉國際有限公司",
+        country: "台灣",
+        image: "/image/brand/purebaby.png"
+    },
+    {
+        id: "noopii",
+        name: "美好",
+        href: "https://www.goodgoods.design/",
+        owner: "拾物工作室",
+        country: "台灣",
+        image: "/image/brand/noopii.png"
+    },
+    {
+        id: "goo.n",
+        name: "大王",
+        href: "https://www.goondiaper.com/",
+        owner: "大王製紙株式會社",
+        country: "日本",
+        image: "/image/brand/goo.n.png"
+    },
+    {
+        id: "nepia-genki",
+        name: "日本王子",
+        href: "https://cdn.e-nepia.com/genki/pc/product/overseas.html",
+        owner: "王子製紙株式会社",
+        country: "日本",
+        image: "/image/brand/nepia-genki.png"
     }
 ];
