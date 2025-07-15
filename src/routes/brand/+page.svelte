@@ -25,7 +25,11 @@
 
 <div class="relative w-full">
     <!-- Hero -->
-    <Hero title="品牌" description="我們收集了數個常見的品牌，並提供了相關的資訊和連結。" />
+    <Hero
+        title="品牌"
+        description="我們收集了數個常見的品牌，並提供了相關的資訊和連結。"
+        image="pexels-fadime-demirtas-42037863-12603180.jpg"
+    />
 
     <section class="relative w-full">
         <div class="container mx-auto">
