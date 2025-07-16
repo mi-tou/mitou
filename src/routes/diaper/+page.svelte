@@ -21,12 +21,12 @@
     let diapers = $derived(
         data.diapers
             .filter((diaper) => diaper.name.toLowerCase().includes(filters.search.toLowerCase()))
+            .filter((diaper) => diaper.type === filters.type)
             .filter((diaper) =>
                 filters.madeInChina
                     ? diaper.countryOfOrigin === "中國"
                     : diaper.countryOfOrigin !== "中國"
             )
-        // .filter((diaper) => diaper.type === filters.type)
     );
 </script>
 
@@ -136,7 +136,8 @@
                     </table>
                 {:else}
                     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-                        {#each diapers as diaper}{#each diaper.prices as price}
+                        {#each diapers as diaper}
+                            {#each diaper.prices as price}
                                 {#if price.size === filters.size}
                                     <div class="card bg-base-100 shadow-sm">
                                         <figure>
