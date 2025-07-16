@@ -1,0 +1,100 @@
+// use PChome https://24h.pchome.com.tw/category/DAAO05C
+type Price = {
+    size: "NB" | "S" | "M" | "L" | "XL" | "XXL" | "XXXL";
+    pricing: number;
+    numberOfItems: number;
+};
+
+export type Diaper = {
+    brand: string;
+    name: string;
+    type: "黏貼型" | "拉拉褲" | "安睡褲";
+    countryOfOrigin: string;
+    image: string;
+    prices: Price[];
+};
+
+export const diaperTypes = ["黏貼型", "拉拉褲", "安睡褲"];
+
+export const diaperSizes = ["NB", "S", "M", "L", "XL", "XXL", "XXXL"];
+
+const pampers: Diaper[] = [
+    {
+        brand: "幫寶適",
+        name: "奢寵幫",
+        type: "黏貼型",
+        countryOfOrigin: "中國",
+        image: "/image/diaper/pampers-奢寵幫.webp",
+        prices: [
+            { size: "NB", pricing: 499, numberOfItems: 54 },
+            { size: "S", pricing: 499, numberOfItems: 48 },
+            { size: "M", pricing: 499, numberOfItems: 38 },
+            { size: "L", pricing: 499, numberOfItems: 32 }
+        ]
+    },
+    {
+        brand: "幫寶適",
+        name: "奢寵幫",
+        type: "拉拉褲",
+        countryOfOrigin: "中國",
+        image: "/image/diaper/pampers-奢寵幫.webp",
+        prices: [
+            { size: "L", pricing: 599, numberOfItems: 34 },
+            { size: "XL", pricing: 599, numberOfItems: 30 },
+            { size: "XXL", pricing: 599, numberOfItems: 24 }
+        ]
+    },
+    {
+        brand: "幫寶適",
+        name: "極上守護",
+        type: "黏貼型",
+        countryOfOrigin: "中國",
+        image: "/image/diaper/pampers-極上守護.webp",
+        prices: [
+            { size: "NB", pricing: 1980, numberOfItems: 64 * 4 },
+            { size: "S", pricing: 1980, numberOfItems: 56 * 4 },
+            { size: "M", pricing: 2340, numberOfItems: 54 * 4 },
+            { size: "L", pricing: 2340, numberOfItems: 44 * 4 },
+            { size: "XL", pricing: 2340, numberOfItems: 34 * 4 }
+        ]
+    },
+    {
+        brand: "幫寶適",
+        name: "極上守護",
+        type: "拉拉褲",
+        countryOfOrigin: "中國",
+        image: "/image/diaper/pampers-極上守護.webp",
+        prices: [
+            { size: "M", pricing: 1500, numberOfItems: 42 * 3 },
+            { size: "L", pricing: 1956, numberOfItems: 34 * 3 },
+            { size: "XL", pricing: 1752, numberOfItems: 32 * 3 },
+            { size: "XXL", pricing: 1752, numberOfItems: 24 * 3 }
+        ]
+    },
+    {
+        brand: "幫寶適",
+        name: "清新幫",
+        type: "拉拉褲",
+        countryOfOrigin: "中國",
+        image: "/image/diaper/pampers-清新幫.webp",
+        prices: [
+            { size: "L", pricing: 439, numberOfItems: 42 },
+            { size: "XL", pricing: 439, numberOfItems: 38 },
+            { size: "XXL", pricing: 439, numberOfItems: 26 },
+            { size: "XXXL", pricing: 439, numberOfItems: 22 }
+        ]
+    },
+    {
+        brand: "幫寶適",
+        name: "巧虎安睡褲",
+        type: "安睡褲",
+        countryOfOrigin: "中國",
+        image: "/image/diaper/pampers-巧虎安睡褲.jpg",
+        prices: [
+            { size: "XL", pricing: 439, numberOfItems: 26 * 4 },
+            { size: "XXL", pricing: 2470, numberOfItems: 22 * 4 }
+        ]
+    }
+];
+
+export const diapers: Diaper[] = [...pampers];
