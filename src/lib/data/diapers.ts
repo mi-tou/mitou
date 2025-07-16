@@ -97,4 +97,76 @@ const pampers: Diaper[] = [
     }
 ];
 
-export const diapers: Diaper[] = [...pampers];
+const mamypoko: Diaper[] = [
+    {
+        brand: "滿意寶寶",
+        name: "極上呵護",
+        type: "黏貼型",
+        countryOfOrigin: "日本",
+        image: "/image/diaper/mamypoko-極上呵護.webp",
+        prices: [
+            { size: "NB", pricing: 1668, numberOfItems: 66 * 4 },
+            { size: "S", pricing: 1596, numberOfItems: 60 * 4 },
+            { size: "M", pricing: 2156, numberOfItems: 62 * 4 },
+            { size: "L", pricing: 2156, numberOfItems: 52 * 4 },
+            { size: "XL", pricing: 2156, numberOfItems: 40 * 4 }
+        ]
+    },
+    {
+        brand: "滿意寶寶",
+        name: "極上呵護",
+        type: "拉拉褲",
+        countryOfOrigin: "日本",
+        image: "/image/diaper/mamypoko-極上呵護.webp",
+        prices: [
+            { size: "M", pricing: 978, numberOfItems: 46 * 2 },
+            { size: "L", pricing: 2100, numberOfItems: 42 * 4 },
+            { size: "XL", pricing: 2100, numberOfItems: 32 * 4 },
+            { size: "XXL", pricing: 599, numberOfItems: 26 }
+        ]
+    },
+    {
+        brand: "滿意寶寶",
+        name: "瞬潔乾爽",
+        type: "黏貼型",
+        countryOfOrigin: "日本",
+        image: "/image/diaper/mamypoko-瞬潔乾爽.webp",
+        prices: [
+            { size: "NB", pricing: 1199, numberOfItems: 56 * 4 },
+            { size: "S", pricing: 375, numberOfItems: 74 },
+            { size: "M", pricing: 2099, numberOfItems: 60 * 4 },
+            { size: "L", pricing: 2099, numberOfItems: 49 * 4 + 2 },
+            { size: "XL", pricing: 2099, numberOfItems: 42 * 4 },
+            { size: "XXL", pricing: 1919, numberOfItems: 30 * 4 }
+        ]
+    },
+    {
+        brand: "滿意寶寶",
+        name: "瞬潔乾爽",
+        type: "拉拉褲",
+        countryOfOrigin: "日本",
+        image: "/image/diaper/mamypoko-瞬潔乾爽.webp",
+        prices: [
+            { size: "M", pricing: 479, numberOfItems: 58 },
+            { size: "L", pricing: 1756, numberOfItems: 44 * 4 },
+            { size: "XL", pricing: 1756, numberOfItems: 38 * 4 },
+            { size: "XXL", pricing: 1756, numberOfItems: 25 * 4 + 2 },
+            { size: "XXXL", pricing: 799, numberOfItems: 14 * 2 }
+        ]
+    },
+    {
+        brand: "滿意寶寶",
+        name: "兒童系列",
+        type: "安睡褲",
+        countryOfOrigin: "日本",
+        image: "/image/diaper/mamypoko-兒童系列.webp",
+        prices: [
+            { size: "L", pricing: 1370, numberOfItems: 30 * 3 },
+            { size: "XL", pricing: 1370, numberOfItems: 22 * 3 },
+            { size: "XXL", pricing: 1370, numberOfItems: 22 * 3 },
+            { size: "XXXL", pricing: 1370, numberOfItems: 12 * 3 }
+        ]
+    }
+];
+
+export const diapers: Diaper[] = [...pampers, ...mamypoko];
