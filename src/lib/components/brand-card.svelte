@@ -10,7 +10,7 @@
     const { brand }: BrandCardProps = $props();
 </script>
 
-<a class="card card-border card-lg hover:-translate-y-2" href="/brand/{brand.id}">
+<a class="card card-border card-lg hover:-translate-y-2" href={brand.href} target="_blank">
     <figure>
         <img
             src={brand.image}
