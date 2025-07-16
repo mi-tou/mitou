@@ -14,20 +14,43 @@
 
     let filters = $state({
         search: "",
-        type: "黏貼型",
-        size: "M",
         madeInChina: false
     });
-    let diapers = $derived(
-        data.diapers
-            .filter((diaper) => diaper.name.toLowerCase().includes(filters.search.toLowerCase()))
-            .filter((diaper) => diaper.type === filters.type)
-            .filter((diaper) =>
-                filters.madeInChina
-                    ? diaper.countryOfOrigin === "中國"
-                    : diaper.countryOfOrigin !== "中國"
-            )
-    );
+
+    const fakeTypesI18n = {
+        adhesive: "黏貼式",
+        pullUps: "拉拉褲",
+        overnight: "安睡褲"
+    };
+    let diaperTypes = $state({
+        adhesive: true,
+        pullUps: true,
+        overnight: true
+    });
+
+    let diaperSizes = $state({
+        NB: true,
+        S: true,
+        M: true,
+        L: true,
+        XL: true,
+        XXL: true,
+        XXXL: true
+    });
+
+    let diapers = $derived.by(() => {
+        return data.diapers
+            .filter((diaper) => diaperTypes[diaper.type])
+            .filter((diaper) => diaper.countryOfOrigin !== "中國" || filters.madeInChina);
+        // .flatMap((diaper) =>
+        //     diaper.prices
+        //         .filter((price) => diaperSizes[price.size])
+        //         .map((price) => ({
+        //             ...diaper,
+        //             ...price
+        //         }))
+        // )
+    });
 </script>
 
 <svelte:window bind:innerWidth={width} />
@@ -39,6 +62,7 @@
         <div class="grid grid-rows-[auto_1fr] gap-8 lg:grid-cols-[auto_1fr]">
             <div class="card max-w-sm p-8 shadow-sm">
                 <div class="flex flex-col gap-4">
+                    <h4>搜尋:</h4>
                     <label class="input">
                         <IconSearch />
                         <input
@@ -47,21 +71,73 @@
                             placeholder="Search"
                             bind:value={filters.search}
                         />
-                        <kbd class="kbd kbd-sm">⌘</kbd>
-                        <kbd class="kbd kbd-sm">K</kbd>
                     </label>
 
-                    <select class="select" bind:value={filters.type}>
-                        {#each data.types as type}
-                            <option>{type}</option>
-                        {/each}
-                    </select>
+                    <h4>褲型:</h4>
+                    <div class="flex items-center gap-2">
+                        <label class="checked flex items-center gap-2">
+                            <input
+                                type="checkbox"
+                                class="checkbox"
+                                bind:checked={diaperTypes.adhesive}
+                            />
+                            黏貼式
+                        </label>
+                        <label class="checked flex items-center gap-2">
+                            <input
+                                type="checkbox"
+                                class="checkbox"
+                                bind:checked={diaperTypes.pullUps}
+                            />
+                            拉拉褲
+                        </label>
+                        <label class="checked flex items-center gap-2">
+                            <input
+                                type="checkbox"
+                                class="checkbox"
+                                bind:checked={diaperTypes.overnight}
+                            />
+                            安睡褲
+                        </label>
+                    </div>
 
-                    <select class="select" bind:value={filters.size}>
-                        {#each data.sizes as size}
-                            <option>{size}</option>
-                        {/each}
-                    </select>
+                    <h4>尺寸:</h4>
+                    <div class="flex flex-wrap items-center gap-2">
+                        <label class="checked flex items-center gap-2">
+                            <input type="checkbox" class="checkbox" bind:checked={diaperSizes.NB} />
+                            NB
+                        </label>
+                        <label class="checked flex items-center gap-2">
+                            <input type="checkbox" class="checkbox" bind:checked={diaperSizes.S} />
+                            S
+                        </label>
+                        <label class="checked flex items-center gap-2">
+                            <input type="checkbox" class="checkbox" bind:checked={diaperSizes.M} />
+                            M
+                        </label>
+                        <label class="checked flex items-center gap-2">
+                            <input type="checkbox" class="checkbox" bind:checked={diaperSizes.L} />
+                            L
+                        </label>
+                        <label class="checked flex items-center gap-2">
+                            <input type="checkbox" class="checkbox" bind:checked={diaperSizes.XL} />
+                            XL
+                        </label><label class="checked flex items-center gap-2">
+                            <input
+                                type="checkbox"
+                                class="checkbox"
+                                bind:checked={diaperSizes.XXL}
+                            />
+                            XXL
+                        </label><label class="checked flex items-center gap-2">
+                            <input
+                                type="checkbox"
+                                class="checkbox"
+                                bind:checked={diaperSizes.XXXL}
+                            />
+                            XXXL
+                        </label>
+                    </div>
 
                     <fieldset class="fieldset flex items-center gap-2">
                         <label class="toggle">
@@ -105,7 +181,7 @@
                         <tbody>
                             {#each diapers as diaper}
                                 {#each diaper.prices as price}
-                                    {#if price.size === filters.size}
+                                    {#if diaperSizes[price.size]}
                                         <tr>
                                             <td class="flex items-center gap-2">
                                                 <div class="avatar">
@@ -119,7 +195,7 @@
                                                 {diaper.brand}
                                                 {diaper.name}
                                             </td>
-                                            <td>{diaper.type}</td>
+                                            <td>{fakeTypesI18n[diaper.type]}</td>
                                             <td>{price.size}</td>
                                             <td>{price.pricing} / {price.numberOfItems} 片</td>
                                             <td class="w-fit text-right">
@@ -138,7 +214,7 @@
                     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
                         {#each diapers as diaper}
                             {#each diaper.prices as price}
-                                {#if price.size === filters.size}
+                                {#if diaperSizes[price.size]}
                                     <div class="card bg-base-100 shadow-sm">
                                         <figure>
                                             <img
@@ -165,7 +241,7 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td>{diaper.type}</td>
+                                                        <td>{fakeTypesI18n[diaper.type]}</td>
                                                         <td>{price.size}</td>
                                                         <td
                                                             >{price.pricing} / {price.numberOfItems}

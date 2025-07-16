@@ -8,13 +8,13 @@ type Price = {
 export type Diaper = {
     brand: string;
     name: string;
-    type: "黏貼型" | "拉拉褲" | "安睡褲";
+    type: "adhesive" | "pullUps" | "overnight";
     countryOfOrigin: string;
     image: string;
     prices: Price[];
 };
 
-export const diaperTypes = ["黏貼型", "拉拉褲", "安睡褲"];
+export const diaperTypes = ["adhesive", "pullUps", "overnight"];
 
 export const diaperSizes = ["NB", "S", "M", "L", "XL", "XXL", "XXXL"];
 
@@ -22,7 +22,7 @@ const pampers: Diaper[] = [
     {
         brand: "幫寶適",
         name: "奢寵幫",
-        type: "黏貼型",
+        type: "adhesive",
         countryOfOrigin: "中國",
         image: "/image/diaper/pampers-奢寵幫.webp",
         prices: [
@@ -35,7 +35,7 @@ const pampers: Diaper[] = [
     {
         brand: "幫寶適",
         name: "奢寵幫",
-        type: "拉拉褲",
+        type: "pullUps",
         countryOfOrigin: "中國",
         image: "/image/diaper/pampers-奢寵幫.webp",
         prices: [
@@ -47,7 +47,7 @@ const pampers: Diaper[] = [
     {
         brand: "幫寶適",
         name: "極上守護",
-        type: "黏貼型",
+        type: "adhesive",
         countryOfOrigin: "中國",
         image: "/image/diaper/pampers-極上守護.webp",
         prices: [
@@ -61,7 +61,7 @@ const pampers: Diaper[] = [
     {
         brand: "幫寶適",
         name: "極上守護",
-        type: "拉拉褲",
+        type: "pullUps",
         countryOfOrigin: "中國",
         image: "/image/diaper/pampers-極上守護.webp",
         prices: [
@@ -74,7 +74,7 @@ const pampers: Diaper[] = [
     {
         brand: "幫寶適",
         name: "清新幫",
-        type: "拉拉褲",
+        type: "pullUps",
         countryOfOrigin: "中國",
         image: "/image/diaper/pampers-清新幫.webp",
         prices: [
@@ -87,7 +87,7 @@ const pampers: Diaper[] = [
     {
         brand: "幫寶適",
         name: "巧虎安睡褲",
-        type: "安睡褲",
+        type: "overnight",
         countryOfOrigin: "中國",
         image: "/image/diaper/pampers-巧虎安睡褲.jpg",
         prices: [
@@ -101,7 +101,7 @@ const mamypoko: Diaper[] = [
     {
         brand: "滿意寶寶",
         name: "極上呵護",
-        type: "黏貼型",
+        type: "adhesive",
         countryOfOrigin: "日本",
         image: "/image/diaper/mamypoko-極上呵護.webp",
         prices: [
@@ -115,7 +115,7 @@ const mamypoko: Diaper[] = [
     {
         brand: "滿意寶寶",
         name: "極上呵護",
-        type: "拉拉褲",
+        type: "pullUps",
         countryOfOrigin: "日本",
         image: "/image/diaper/mamypoko-極上呵護.webp",
         prices: [
@@ -128,7 +128,7 @@ const mamypoko: Diaper[] = [
     {
         brand: "滿意寶寶",
         name: "瞬潔乾爽",
-        type: "黏貼型",
+        type: "adhesive",
         countryOfOrigin: "日本",
         image: "/image/diaper/mamypoko-瞬潔乾爽.webp",
         prices: [
@@ -143,7 +143,7 @@ const mamypoko: Diaper[] = [
     {
         brand: "滿意寶寶",
         name: "瞬潔乾爽",
-        type: "拉拉褲",
+        type: "pullUps",
         countryOfOrigin: "日本",
         image: "/image/diaper/mamypoko-瞬潔乾爽.webp",
         prices: [
@@ -157,7 +157,7 @@ const mamypoko: Diaper[] = [
     {
         brand: "滿意寶寶",
         name: "兒童系列",
-        type: "安睡褲",
+        type: "overnight",
         countryOfOrigin: "日本",
         image: "/image/diaper/mamypoko-兒童系列.webp",
         prices: [
